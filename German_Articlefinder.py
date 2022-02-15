@@ -34,7 +34,7 @@ def printResult(word, result):
     if result == "Not Sure":
         print("Not able to tell the gender")
     else:
-        print("The german noun {word} is {result}: {article} {word}".format(
+        print("The german noun {word} is {result}: \n {article} {word}".format(
             word=word, result=result, article=Article[result]))
 
 
@@ -42,7 +42,10 @@ def restartLoop():
     print("Would you like to try a nother word? y/n")
     again = input()
     if again == "n":
-        loop = False
+        print("\nThanks for using my app!")
+        return False
+    else:
+        return True
 
 
 def main():
@@ -61,7 +64,7 @@ def main():
 
             printResult(word, result)
 
-            restartLoop()
+            loop = restartLoop()
         except KeyboardInterrupt:
             print("\nThanks for using my app!")
             loop = False
