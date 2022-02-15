@@ -1,6 +1,7 @@
-FeminineEndings = ["ung", "heit", "keit", "schaft", "ik", "ion"]
-NeuterEndings = ["nis", "tum", "lein", "chen", "ment"]
-MasculineEndings = ["ling", "ich", "ig"]
+FeminineEndings = ["ung", "heit", "keit", "schaft",
+                   "ik", "ion", "e", "t", "ei", "in", "ur", "anz", "tät", "taet", "ade", "enz"]
+NeuterEndings = ["um", "nis", "tum", "lein", "chen", "ment", "o"]
+MasculineEndings = ["ling", "ich", "ig", "or", "ist", "ismus", "er"]
 
 Article = {"feminine": "Die", "masculine": "Der", "neuter": "Das"}
 
@@ -22,9 +23,11 @@ def retrievewordGender(word):
 def main():
     print("Please enter a german noun:")
 
-    wordInput = input()
+    wordInput = input().lower()
 
     result = retrievewordGender(wordInput)
+
+    wordInput = wordInput.capitalize()
 
     print("The german noun {word} is {result}: {article} {word}".format(
         word=wordInput, result=result, article=Article[result]))
