@@ -1,3 +1,5 @@
+import nltk
+
 FeminineEndings = ["ung", "heit", "keit", "schaft",
                    "ik", "ion", "e", "t", "ei", "in", "ur", "anz", "tät", "taet", "ade", "enz"]
 NeuterEndings = ["um", "nis", "tum", "lein", "chen", "ment", "o"]
